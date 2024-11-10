@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmar Exclusão de Memorial</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Excluir Memorial de Cálculo</h2>
+        <p>Tem certeza de que deseja excluir o memorial "{{ object.nome_memorial }}"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Confirmar</button>
+            <a href="{% url 'militares:militar_detail' object.militar.pk %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>
